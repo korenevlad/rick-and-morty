@@ -9,18 +9,18 @@ export const Home = () => {
                 <div className='col text-center'>
                     <div>
                         <Link to="/personages">
-                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Персонажи</button>
+                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Characters</button>
                         </Link>
                     </div>
                     <div className='pt-1'>
                         <Link to="/locations">
-                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Локации</button>
+                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Location</button>
                         </Link>
                         
                     </div>
                     <div className='pt-1'>
                         <Link to="/episodes">
-                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Эпизоды</button>
+                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Episodes</button>
                         </Link>
                     </div>
                 </div>

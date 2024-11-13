@@ -1,4 +1,4 @@
-import { dataCharacters } from '../data/characters.json'
+import dataCharacters from '../data/characters.json'
 
 export const Personages = () => {
     return (
@@ -7,61 +7,20 @@ export const Personages = () => {
                 <div className="row">
                         <div className="col-8">
                             <div className="row row-cols-4">
-            
-
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                     <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                     <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                     <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                     <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                     <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                    <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-                                <div className="col text-center pt-3">
-                                     <button type="button" class="btn btn-secondary btn">Small button</button>
-                                </div>
-
-
+                                {
+                                    dataCharacters.map((item, index) => {
+                                        return(
+                                            <div className="col text-center pt-3">
+                                                <button type="button" class="btn btn-secondary btn" style={{ width: '150px', height: '100px' }}>
+                                                    {item.name}
+                                                </button>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
-                    <div className="col-4 text-center pt-3">Инфа про персонажа</div>    {/* убрать тут  */}
+                        <div className="col-4 text-center pt-3"><h5>Information about the character</h5></div>     {/* убрать тут  */}
                 </div> 
             </div>
         </div>

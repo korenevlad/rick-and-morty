@@ -42,7 +42,8 @@ body {
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center center;
-  background-attachment: scroll;
+  background-attachment: fixed; 
   min-height: 100vh;
   margin: 0;
 }
+
