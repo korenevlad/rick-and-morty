@@ -1,26 +1,32 @@
-import dataLocations from '../data/location.json'
+import dataLocations from '../data/location.json';
+import { Link, Outlet } from 'react-router-dom';
 
 export const Locations = () => {
     return (
         <div className="col-8 pt-2">
             <div className="container">
                 <div className="row">
-                        <div className="col-8">
-                            <div className="row row-cols-4">
-                                {
-                                    dataLocations.map((item, index) => {
-                                        return(
-                                            <div className="col text-center pt-3">
+                    <div className="col-8">
+                        <div className="row row-cols-4">
+                            {
+                                dataLocations.map((item) => {
+                                    return(
+                                        <div className="col text-center pt-3">
+                                            <Link 
+                                                to={`/locations/${item.id}`}
+                                                state={item}
+                                            >
                                                 <button type="button" class="btn btn-secondary btn" style={{ width: '150px', height: '100px' }}>
                                                     {item.name}
                                                 </button>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
+                                            </Link>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
-                    <div className="col-4 text-center pt-3"><h5>Information about the location</h5></div>    {/* убрать тут  */}
+                    </div>
+                    <Outlet />
                 </div> 
             </div>
         </div>
