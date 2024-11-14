@@ -15,7 +15,6 @@ export const Episodes = () => {
                                         <div className="col text-center pt-3">
                                             <NavLink 
                                                 to={internalPaths.episode(item.id)}
-                                                state={item}
                                             >
                                                 {({isActive}) =>
                                                     <button

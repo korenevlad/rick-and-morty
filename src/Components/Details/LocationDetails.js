@@ -1,8 +1,9 @@
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import dataCharacters from '../../Data/location.json';
 
 export const LocationDetails = () => {
-    const location = useLocation();
-    const {name, type, dimension, created} = location.state;
+    const {id} = useParams();
+    const {name, type, dimension, created} = dataCharacters.find(item => item.id == id)
     return (
         <>
             <div className="col-4 text-center pt-3">

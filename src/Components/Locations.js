@@ -15,7 +15,6 @@ export const Locations = () => {
                                         <div className="col text-center pt-3">
                                             <NavLink 
                                                 to={internalPaths.location(item.id)}
-                                                state={item}
                                             >
                                                 {({isActive}) =>
                                                     <button

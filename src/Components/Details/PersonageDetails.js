@@ -1,8 +1,9 @@
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import dataCharacters from '../../Data/characters.json';
 
 export const PersonageDetails = () => {
-    const location = useLocation();
-    const {name, status, species, type, gender, image, created} = location.state;
+    const {id} = useParams();
+    const {name, status, species, type, gender, image, created} = dataCharacters.find(item => item.id == id)
     return (
         <>
             <div className="col-4 text-center pt-3">

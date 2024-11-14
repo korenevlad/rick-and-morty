@@ -15,7 +15,6 @@ export const Personages = () => {
                                         <div className="col text-center pt-3">
                                             <NavLink 
                                                 to={internalPaths.personage(item.id)}
-                                                state={item}
                                             >
                                                 {({isActive}) =>
                                                     <button
