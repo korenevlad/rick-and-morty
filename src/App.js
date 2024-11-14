@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import { Home, Personages, Locations, Episodes, NotFound } from './Components';
 import { PersonageDetails, LocationDetails, EpisodeDetails } from './Components/Details';
 
-
 function App() {
   return (
     <>

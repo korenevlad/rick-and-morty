@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import { internalPaths } from '../InternalPaths';
 
 export const Home = () => {
     return(
@@ -8,20 +9,37 @@ export const Home = () => {
                 <h1 className="text-center pt-3">Welcome!</h1>
                 <div className='col text-center'>
                     <div>
-                        <Link to="/personages">
-                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Characters</button>
-                        </Link>
+                        <NavLink to={internalPaths.personages}>
+                            {({isActive}) =>
+                                <button
+                                    className={`btn btn-lg ${isActive ? "btn-outline-info" : "btn-outline-light"}`}
+                                    style={{ width: '150px', height: '50px' }}>
+                                    Characters
+                                </button> 
+                            }
+                        </NavLink>
                     </div>
                     <div className='pt-1'>
-                        <Link to="/locations">
-                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Location</button>
-                        </Link>
-                        
+                        <NavLink to={internalPaths.locations}>
+                            {({isActive}) =>
+                                <button
+                                    className={`btn btn-lg ${isActive ? "btn-outline-info" : "btn-outline-light"}`}
+                                    style={{ width: '150px', height: '50px' }}>
+                                    Location
+                                </button> 
+                            }
+                        </NavLink>
                     </div>
                     <div className='pt-1'>
-                        <Link to="/episodes">
-                            <button className="btn btn-outline-light btn-lg" style={{ width: '150px', height: '50px' }}>Episodes</button>
-                        </Link>
+                        <NavLink to={internalPaths.episodes}>
+                            {({isActive}) =>
+                                <button
+                                    className={`btn btn-lg ${isActive ? "btn-outline-info" : "btn-outline-light"}`}
+                                    style={{ width: '150px', height: '50px' }}>
+                                    Episodes
+                                </button> 
+                            }
+                        </NavLink>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
-import dataEpisodes from '../data/episode.json';
-import { Link, Outlet } from 'react-router-dom';
+import dataEpisodes from '../Data/episode.json';
+import { NavLink, Outlet } from 'react-router-dom';
+import { internalPaths } from '../InternalPaths';
 
 export const Episodes = () => {
     return (
@@ -12,14 +13,18 @@ export const Episodes = () => {
                                 dataEpisodes.map((item) => {
                                     return(
                                         <div className="col text-center pt-3">
-                                            <Link 
-                                                to={`/episodes/${item.id}`}
+                                            <NavLink 
+                                                to={internalPaths.episode(item.id)}
                                                 state={item}
                                             >
-                                                <button type="button" class="btn btn-secondary btn" style={{ width: '150px', height: '100px' }}>
-                                                    {item.name}
-                                                </button>
-                                            </Link>
+                                                {({isActive}) =>
+                                                    <button
+                                                        className={`btn ${isActive ? "btn-info" : "btn-secondary"}`}
+                                                        style={{ width: '150px', height: '100px' }}>
+                                                        {item.name}
+                                                    </button> 
+                                                }
+                                            </NavLink>
                                         </div>
                                     )
                                 })

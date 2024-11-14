@@ -1,5 +1,6 @@
-import dataLocations from '../data/location.json';
-import { Link, Outlet } from 'react-router-dom';
+import dataLocations from '../Data/location.json';
+import { NavLink, Outlet } from 'react-router-dom';
+import { internalPaths } from '../InternalPaths';
 
 export const Locations = () => {
     return (
@@ -12,14 +13,18 @@ export const Locations = () => {
                                 dataLocations.map((item) => {
                                     return(
                                         <div className="col text-center pt-3">
-                                            <Link 
-                                                to={`/locations/${item.id}`}
+                                            <NavLink 
+                                                to={internalPaths.location(item.id)}
                                                 state={item}
                                             >
-                                                <button type="button" class="btn btn-secondary btn" style={{ width: '150px', height: '100px' }}>
-                                                    {item.name}
-                                                </button>
-                                            </Link>
+                                                {({isActive}) =>
+                                                    <button
+                                                        className={`btn ${isActive ? "btn-info" : "btn-secondary"}`}
+                                                        style={{ width: '150px', height: '100px' }}>
+                                                        {item.name}
+                                                    </button> 
+                                                }
+                                            </NavLink>
                                         </div>
                                     )
                                 })
